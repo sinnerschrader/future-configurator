@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import { basePath } from "../../next.config";
 
 export default function Home() {
   return (
@@ -57,7 +58,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          <img src={`${basePath}/vercel.svg`} alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
     </div>
