@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.AUDI_GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: Install dependencies
+        run: |
+          npm config set "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}"
+          npm install
+      - name: Build
+        run: npm run build
+      - name: deploy
+        if: github.ref == 'refs/heads/main'
+        run: |
+          npm run build
+          npm run export
+          npm run deploy
