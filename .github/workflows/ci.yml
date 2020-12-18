@@ -18,6 +18,8 @@ jobs:
       - name: Install dependencies
         run: |
           npm config set "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}"
+          git config user.name ${ GITHUB_ACTOR }
+          git config user.email ""
           npm install
       - name: Build
         run: npm run build
