@@ -1,0 +1,35 @@
+{
+  "name": "future-configurator",
+  "version": "0.1.0",
+  "description": "Concept of a futuristic car configurator",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "10.0.3",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinnerschrader/future-configurator.git"
+  },
+  "author": {
+    "name": "Daniel Gooß",
+    "email": "daniel.gooss@sinnerschrader.com"
+  },
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/sinnerschrader/future-configurator/issues"
+  },
+  "homepage": "https://github.com/sinnerschrader/future-configurator#readme",
+  "devDependencies": {
+    "@types/node": "^14.14.14",
+    "@types/react": "^17.0.0",
+    "typescript": "^4.1.3"
+  }
+}
