@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { basePath } from "../../next.config";
 import { Button } from "../components/button/Button";
+import { Headline } from "../components/headline/Headline";
 
 export default function Home() {
   return (
@@ -11,14 +12,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Now You!
-        </h1>
+        <Headline>Now You!</Headline>
+        <Headline>Swipe to try</Headline>
 
         <Button>Skip</Button>
-        
       </main>
     </div>
   );

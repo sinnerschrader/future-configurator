@@ -25,7 +25,7 @@ export function Button({
   const Component = as || "button";
 
   return (
-    <Component className={styles.button} {...restProps}>
+    <Component className={styles.default} {...restProps}>
       {children}
     </Component>
   );
