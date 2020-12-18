@@ -1,0 +1,21 @@
+.button {
+    --button-min-height: 50px;
+
+    display: inline-block;
+    box-sizing: border-box;
+    min-height: var(--button-min-height);
+    padding: 0 calc(var(--button-min-height) / 2);
+
+    color: inherit;
+    font: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    background: transparent;
+    border: 1px solid currentColor;
+    border-radius: calc(var(--button-min-height) / 2);
+
+    cursor: pointer;
+    user-select: none;
+}
