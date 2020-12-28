@@ -4,6 +4,7 @@ import { Button } from "../components/button/Button";
 import { Headline } from "../components/headline/Headline";
 import { Slider } from "../components/slider/Slider";
 import { Slide } from "../components/slider/Slide";
+import { SlideDivider } from "../components/slider/SlideDivider";
 
 export default function Home() {
   return (
@@ -16,8 +17,10 @@ export default function Home() {
       <main className={styles.main}>
         <Slider>
           <Slide>
+            <Headline>Exterior</Headline>
             <Button>Skip</Button>
           </Slide>
+          <SlideDivider prevLabel="Exterior" nextLabel="Interior" />
           <Slide
             onEnter={() => console.info("Enter")}
             onLeft={() => console.info("Left")}
@@ -28,7 +31,9 @@ export default function Home() {
 
             <Button>Skip</Button>
           </Slide>
+          <SlideDivider prevLabel="Exterior" nextLabel="Interior" />
           <Slide>
+            <Headline>Interior</Headline>
             <Button>Skip</Button>
           </Slide>
         </Slider>
