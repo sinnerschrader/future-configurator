@@ -1,0 +1,16 @@
+.default {
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  width: 100%;
+  padding: 0 var(--main-page-indent-right) var(--main-page-indent-bottom)
+    var(--main-page-indent-left);
+
+  scroll-snap-align: start;
+
+  min-height: 100vh;
+  min-height: fill-available;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,8 +1,9 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { basePath } from "../../next.config";
 import { Button } from "../components/button/Button";
 import { Headline } from "../components/headline/Headline";
+import { Slider } from "../components/slider/Slider";
+import { Slide } from "../components/slider/Slide";
 
 export default function Home() {
   return (
@@ -13,10 +14,24 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Headline>Now You!</Headline>
-        <Headline>Swipe to try</Headline>
+        <Slider>
+          <Slide>
+            <Button>Skip</Button>
+          </Slide>
+          <Slide
+            onEnter={() => console.info("Enter")}
+            onLeft={() => console.info("Left")}
+            onSnap={() => console.info("Snap")}
+          >
+            <Headline>Now You!</Headline>
+            <Headline>Swipe to try</Headline>
 
-        <Button>Skip</Button>
+            <Button>Skip</Button>
+          </Slide>
+          <Slide>
+            <Button>Skip</Button>
+          </Slide>
+        </Slider>
       </main>
     </div>
   );
