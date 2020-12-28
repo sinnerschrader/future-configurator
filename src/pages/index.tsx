@@ -5,8 +5,15 @@ import { Headline } from "../components/headline/Headline";
 import { Slider } from "../components/slider/Slider";
 import { Slide } from "../components/slider/Slide";
 import { SlideDivider } from "../components/slider/SlideDivider";
+import React, { useLayoutEffect } from "react";
 
 export default function Home() {
+  const startSlideRef = React.useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    startSlideRef.current?.scrollIntoView()
+  }, [startSlideRef])
+
   return (
     <div className={styles.container}>
       <Head>
@@ -22,6 +29,7 @@ export default function Home() {
           </Slide>
           <SlideDivider prevLabel="Exterior" nextLabel="Interior" />
           <Slide
+            ref={startSlideRef}
             onEnter={() => console.info("Enter")}
             onLeft={() => console.info("Left")}
             onSnap={() => console.info("Snap")}
