@@ -1,4 +1,5 @@
 .default {
+  position: relative;
   box-sizing: border-box;
   flex: 0 0 100%;
   width: 100%;

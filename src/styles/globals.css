@@ -2,8 +2,7 @@
 @font-face {
   font-family: "Graphik";
   font-display: swap;
-  src: url(/future-configurator/fonts/Graphik-Super-Web.woff2)
-    format("woff2");
+  src: url(/future-configurator/fonts/Graphik-Super-Web.woff2) format("woff2");
   font-weight: 900;
   font-style: normal;
   font-stretch: normal;
@@ -13,8 +12,7 @@
 @font-face {
   font-family: "Graphik";
   font-display: swap;
-  src: url(/future-configurator/fonts/Graphik-Black-Web.woff2)
-    format("woff2");
+  src: url(/future-configurator/fonts/Graphik-Black-Web.woff2) format("woff2");
   font-weight: 800;
   font-style: normal;
   font-stretch: normal;
@@ -24,8 +22,7 @@
 @font-face {
   font-family: "Graphik";
   font-display: swap;
-  src: url(/future-configurator/fonts/Graphik-Bold-Web.woff2)
-    format("woff2");
+  src: url(/future-configurator/fonts/Graphik-Bold-Web.woff2) format("woff2");
   font-weight: 700;
   font-style: normal;
   font-stretch: normal;
@@ -46,8 +43,7 @@
 @font-face {
   font-family: "Graphik";
   font-display: swap;
-  src: url(/future-configurator/fonts/Graphik-Medium-Web.woff2)
-    format("woff2");
+  src: url(/future-configurator/fonts/Graphik-Medium-Web.woff2) format("woff2");
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
@@ -57,8 +53,7 @@
 @font-face {
   font-family: "Graphik";
   font-display: swap;
-  src: url(/future-configurator/fonts/Graphik-Regular-Web.woff2)
-    format("woff2");
+  src: url(/future-configurator/fonts/Graphik-Regular-Web.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
@@ -68,8 +63,7 @@
 @font-face {
   font-family: "Graphik";
   font-display: swap;
-  src: url(/future-configurator/fonts/Graphik-Light-Web.woff2)
-    format("woff2");
+  src: url(/future-configurator/fonts/Graphik-Light-Web.woff2) format("woff2");
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
@@ -90,8 +84,7 @@
 @font-face {
   font-family: "Graphik";
   font-display: swap;
-  src: url(/future-configurator/fonts/Graphik-Thin-Web.woff2)
-    format("woff2");
+  src: url(/future-configurator/fonts/Graphik-Thin-Web.woff2) format("woff2");
   font-weight: 100;
   font-style: normal;
   font-stretch: normal;
@@ -117,12 +110,16 @@ body {
 
 html {
   height: -webkit-fill-available;
+
+  color: #fff;
+  background-color: #000;
 }
 
 body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
-  margin: 0 var(--main-page-indent-right) var(--main-page-indent-bottom) var(--main-page-indent-left)
+  margin: 0 var(--main-page-indent-right) var(--main-page-indent-bottom)
+    var(--main-page-indent-left);
 }
 
 #__next {

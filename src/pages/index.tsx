@@ -6,9 +6,11 @@ import { Slider } from "../components/slider/Slider";
 import { Slide } from "../components/slider/Slide";
 import { SlideDivider } from "../components/slider/SlideDivider";
 import React, { useEffect, useRef, useState } from "react";
+import { Video } from "../components/video/Video";
 
 export default function Home() {
   const [hideCover, setHideCover] = useState(false);
+  const [interiorPlaying, setInteriorPlaying] = useState(false);
   const currentSlideRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -21,6 +23,8 @@ export default function Home() {
     }, 600);
   }
 
+  console.log(interiorPlaying)
+
   return (
     <div className={styles.container}>
       <Head>
@@ -30,17 +34,22 @@ export default function Home() {
 
       <main className={styles.main}>
         <Slider>
-          <Slide>
+          <Slide
+            onSnap={() => {
+              setInteriorPlaying(true);
+            }}
+            onLeft={() => {
+              setInteriorPlaying(false);
+            }}
+          >
             <Headline>Exterior</Headline>
+            <Video playing={interiorPlaying} fullSize />
             <Button>Skip</Button>
           </Slide>
           {!hideCover && (
             <>
               <SlideDivider prevLabel="Exterior" nextLabel="Interior" />
-              <Slide
-                ref={currentSlideRef}
-                onLeft={handleHideCover}
-              >
+              <Slide ref={currentSlideRef} onLeft={handleHideCover}>
                 <Headline>Now You!</Headline>
                 <Headline as="h2">Swipe to try</Headline>
 
