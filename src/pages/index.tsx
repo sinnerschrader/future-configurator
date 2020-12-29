@@ -35,7 +35,7 @@ export default function Home() {
             onSnap={() => console.info("Snap")}
           >
             <Headline>Now You!</Headline>
-            <Headline>Swipe to try</Headline>
+            <Headline as="h2">Swipe to try</Headline>
 
             <Button>Skip</Button>
           </Slide>

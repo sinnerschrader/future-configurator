@@ -103,7 +103,7 @@
   --safe-area-inset-bottom: env(safe-area-inset-bottom);
   --main-page-indent-left: max(2rem, var(--safe-area-inset-left, 0), 5vw);
   --main-page-indent-right: max(2rem, var(--safe-area-inset-left, 0), 5vw);
-  --main-page-indent-bottom: var(--safe-area-inset-bottom, 0);
+  --main-page-indent-bottom: max(var(--safe-area-inset-bottom, 0), 1em);
 }
 
 html,

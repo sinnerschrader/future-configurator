@@ -9,8 +9,9 @@
 
   min-height: 100vh;
   min-height: stretch;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
+
+  display: grid;
+  grid-template-areas: main foot;
+  grid-template-rows: 1fr auto;
+  justify-content: stretch;
 }
