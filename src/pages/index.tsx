@@ -5,14 +5,21 @@ import { Headline } from "../components/headline/Headline";
 import { Slider } from "../components/slider/Slider";
 import { Slide } from "../components/slider/Slide";
 import { SlideDivider } from "../components/slider/SlideDivider";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function Home() {
-  const startSlideRef = React.useRef<HTMLElement>(null);
+  const [hideCover, setHideCover] = useState(false);
+  const currentSlideRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    startSlideRef.current?.scrollIntoView()
-  }, [startSlideRef])
+    currentSlideRef.current?.scrollIntoView();
+  }, [currentSlideRef]);
+
+  function handleHideCover() {
+    window.setTimeout(() => {
+      !hideCover && setHideCover(true);
+    }, 600);
+  }
 
   return (
     <div className={styles.container}>
@@ -27,18 +34,20 @@ export default function Home() {
             <Headline>Exterior</Headline>
             <Button>Skip</Button>
           </Slide>
-          <SlideDivider prevLabel="Exterior" nextLabel="Interior" />
-          <Slide
-            ref={startSlideRef}
-            onEnter={() => console.info("Enter")}
-            onLeft={() => console.info("Left")}
-            onSnap={() => console.info("Snap")}
-          >
-            <Headline>Now You!</Headline>
-            <Headline as="h2">Swipe to try</Headline>
+          {!hideCover && (
+            <>
+              <SlideDivider prevLabel="Exterior" nextLabel="Interior" />
+              <Slide
+                ref={currentSlideRef}
+                onLeft={handleHideCover}
+              >
+                <Headline>Now You!</Headline>
+                <Headline as="h2">Swipe to try</Headline>
 
-            <Button>Skip</Button>
-          </Slide>
+                <Button>Skip</Button>
+              </Slide>
+            </>
+          )}
           <SlideDivider prevLabel="Exterior" nextLabel="Interior" />
           <Slide>
             <Headline>Interior</Headline>
