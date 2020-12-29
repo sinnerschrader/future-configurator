@@ -1,24 +1,40 @@
 .default {
   width: 0;
-  display:flex;
+  display: flex;
   /* flex-wrap: wrap; */
-  justify-content:center;
+  justify-content: center;
   flex-direction: row-reverse;
-  align-items:center;
+  align-items: center;
 }
 
 .label {
-  text-transform: uppercase;
+  padding: 0.5em;
+
+  font-size: 12px;
+  line-height: 2em;
+  text-align: center;
   writing-mode: vertical-rl;
+}
+
+.label svg {
+    display: inline-block;
+    vertical-align: -5%;
+    /* Because of rotated label this is actually "start" instead of "end" */
+    margin-inline-start: 0.5em;
+}
+
+.labelText {
+  /* Required to make transform work */
+  display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
   flex: 0 0 0;
-  padding: 10px;
   transform: rotate(0.5turn);
 }
 
-.labelPrev {
-  
+.labelPrev svg {
+  transform: rotate(0.5turn);
 }
 
 .labelNext {
-  
 }

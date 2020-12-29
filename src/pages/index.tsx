@@ -5,12 +5,12 @@ import { Headline } from "../components/headline/Headline";
 import { Slider } from "../components/slider/Slider";
 import { Slide } from "../components/slider/Slide";
 import { SlideDivider } from "../components/slider/SlideDivider";
-import React, { useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 
 export default function Home() {
   const startSlideRef = React.useRef<HTMLElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     startSlideRef.current?.scrollIntoView()
   }, [startSlideRef])
 
