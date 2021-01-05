@@ -1,12 +1,13 @@
 import styles from "./Video.module.css";
 import config from "../../../next.config.js";
-import useIntersectionObserver from "@react-hook/intersection-observer";
 import { VideoProps } from "./Video.types";
 import { useRef } from "react";
 
 export function Video({
+  src,
   fullSize = false,
   playing = false,
+  poster,
   ...restProps
 }: VideoProps): JSX.Element {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -22,8 +23,8 @@ export function Video({
     <video
       ref={videoRef}
       className={classNames.join(' ')}
-      src={`${config.basePath}/earth.mp4`}
-      poster={`${config.basePath}/earth.jpg`}
+      src={`${config.basePath}/${src}`}
+      poster={`${config.basePath}/${poster}`}
       preload="metadata"
       playsInline
       muted

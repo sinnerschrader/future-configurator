@@ -23,7 +23,7 @@ export default function Home() {
     }, 600);
   }
 
-  console.log(interiorPlaying)
+  console.log(interiorPlaying);
 
   return (
     <div className={styles.container}>
@@ -43,7 +43,12 @@ export default function Home() {
             }}
           >
             <Headline>Exterior</Headline>
-            <Video playing={interiorPlaying} fullSize />
+            <Video
+              src="media/sound-ext_hd.mp4"
+              poster="images/sound-ext.jpg"
+              playing={interiorPlaying}
+              fullSize
+            />
             <Button>Skip</Button>
           </Slide>
           {!hideCover && (
@@ -60,6 +65,12 @@ export default function Home() {
           <SlideDivider prevLabel="Exterior" nextLabel="Interior" />
           <Slide>
             <Headline>Interior</Headline>
+            <Video
+              src="media/sound-int_hd.mp4"
+              poster="images/sound-int.jpg"
+              playing={interiorPlaying}
+              fullSize
+            />
             <Button>Skip</Button>
           </Slide>
         </Slider>
