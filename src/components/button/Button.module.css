@@ -19,3 +19,7 @@
     cursor: pointer;
     user-select: none;
 }
+
+.default:not(:last-child) {
+    margin-bottom: 1em;
+}

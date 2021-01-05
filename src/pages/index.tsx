@@ -11,6 +11,7 @@ import { Video } from "../components/video/Video";
 export default function Home() {
   const [hideCover, setHideCover] = useState(false);
   const [interiorPlaying, setInteriorPlaying] = useState(false);
+  const [videoMuted, setVideoMuted] = useState(true);
   const currentSlideRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -47,9 +48,17 @@ export default function Home() {
               src="media/sound-ext_hd.mp4"
               poster="images/sound-ext.jpg"
               playing={interiorPlaying}
+              muted={videoMuted}
               fullSize
             />
             <Button>Skip</Button>
+            <Button
+              onClick={() => {
+                setVideoMuted(!videoMuted);
+              }}
+            >
+              {videoMuted ? "Unmute" : "Mute"}
+            </Button>
           </Slide>
           {!hideCover && (
             <>
@@ -68,7 +77,8 @@ export default function Home() {
             <Video
               src="media/sound-int_hd.mp4"
               poster="images/sound-int.jpg"
-              playing={interiorPlaying}
+              playing={false}
+              muted={true}
               fullSize
             />
             <Button>Skip</Button>

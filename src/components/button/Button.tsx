@@ -5,7 +5,7 @@ export function Button(
   props: React.PropsWithChildren<
     {
       as: "a";
-    } & Pick<ButtonProps, "href">
+    } & Omit<ButtonProps, "type">
   >
 ): JSX.Element;
 
@@ -13,19 +13,20 @@ export function Button(
   props: React.PropsWithChildren<
     {
       as?: "button";
-    } & Pick<ButtonProps, "type">
+    } &  Omit<ButtonProps, "as" | "href">
   >
 ): JSX.Element;
 
 export function Button({
   as,
   children,
+  onClick = () => {},
   ...restProps
 }: React.PropsWithChildren<ButtonProps>): JSX.Element {
   const Component = as || "button";
 
   return (
-    <Component className={styles.default} {...restProps}>
+    <Component className={styles.default} onClick={onClick} {...restProps}>
       {children}
     </Component>
   );

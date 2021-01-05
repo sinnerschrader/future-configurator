@@ -6,6 +6,7 @@ import { useRef } from "react";
 export function Video({
   src,
   fullSize = false,
+  muted = false,
   playing = false,
   poster,
   ...restProps
@@ -16,19 +17,19 @@ export function Video({
     playing ? videoRef.current.play() : videoRef.current.pause();
   }
 
-  const classNames = [styles.default]
-  fullSize && classNames.push(styles.fullSize)
+  const classNames = [styles.default];
+  fullSize && classNames.push(styles.fullSize);
 
   return (
     <video
       ref={videoRef}
-      className={classNames.join(' ')}
+      className={classNames.join(" ")}
       src={`${config.basePath}/${src}`}
       poster={`${config.basePath}/${poster}`}
       preload="metadata"
       playsInline
-      muted
+      muted={muted}
       {...restProps}
-    ></video>
+    />
   );
 }

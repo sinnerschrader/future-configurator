@@ -3,4 +3,5 @@ export interface VideoProps {
   fullSize?: boolean;
   src: string;
   poster?: string;
+  muted?: boolean;
 }
