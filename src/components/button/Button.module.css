@@ -1,25 +1,29 @@
 .default {
-    --button-min-height: 50px;
+  --button-min-height: 50px;
+  --button-line-height: 1.5em;
 
-    display: inline-block;
-    box-sizing: border-box;
-    min-height: var(--button-min-height);
-    padding: 0 calc(var(--button-min-height) / 2);
+  display: inline-block;
+  box-sizing: border-box;
+  min-height: var(--button-min-height);
+  max-height: max-content;
+  padding: calc((var(--button-min-height) - var(--button-line-height) - 2px) / 2)
+    calc(var(--button-min-height) / 2);
 
-    color: inherit;
-    font: inherit;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  line-height: var(--button-line-height);
+  text-transform: uppercase;
+  text-decoration: none;
 
-    background: transparent;
-    border: 1px solid currentColor;
-    border-radius: calc(var(--button-min-height) / 2);
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: calc(var(--button-min-height) / 2);
 
-    cursor: pointer;
-    user-select: none;
+  cursor: pointer;
+  user-select: none;
 }
 
 .default:not(:last-child) {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
