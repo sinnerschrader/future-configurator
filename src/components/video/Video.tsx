@@ -6,14 +6,13 @@ import { useRef } from "react";
 export function Video({
   src,
   fullSize = false,
-  muted = false,
-  playing = false,
+  playing,
   poster,
   ...restProps
 }: VideoProps): JSX.Element {
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  if (videoRef.current) {
+  if (videoRef.current && playing !== undefined) {
     playing ? videoRef.current.play() : videoRef.current.pause();
   }
 
@@ -25,10 +24,9 @@ export function Video({
       ref={videoRef}
       className={classNames.join(" ")}
       src={`${config.basePath}/${src}`}
-      poster={`${config.basePath}/${poster}`}
+      poster={poster && `${config.basePath}/${poster}`}
       preload="metadata"
       playsInline
-      muted={muted}
       {...restProps}
     />
   );

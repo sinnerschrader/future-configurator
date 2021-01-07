@@ -1,18 +1,9 @@
 .default {
+  composes: default from "../layout/Layout.module.css";
+
   position: relative;
-  box-sizing: border-box;
-  flex: 0 0 100%;
-  width: 100%;
   padding: 0 var(--main-page-indent-right) var(--main-page-indent-bottom)
     var(--main-page-indent-left);
 
   scroll-snap-align: start;
-
-  min-height: 100vh;
-  min-height: stretch;
-
-  display: grid;
-  grid-template-areas: main foot;
-  grid-template-rows: 1fr auto;
-  justify-content: stretch;
 }

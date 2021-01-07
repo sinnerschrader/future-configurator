@@ -1,0 +1,12 @@
+.default {
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  width: 100%;
+
+  min-height: 100vh;
+  min-height: stretch;
+
+  display: grid;
+  grid-template-rows: 1fr auto;
+  justify-content: stretch;
+}
