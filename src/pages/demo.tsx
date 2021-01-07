@@ -20,7 +20,9 @@ function SkipButton(): JSX.Element {
 export default function Home() {
   const [hideCover, setHideCover] = useState(false);
   const [interiorPlaying, setInteriorPlaying] = useState(false);
-  const [videoMuted, setVideoMuted] = useState(true);
+  const [interiorMuted, setInteriorMuted] = useState(true);
+  const [exteriorPlaying, setExteriorPlaying] = useState(false);
+  const [exteriorMuted, setExteriorMuted] = useState(true);
   const currentSlideRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -57,15 +59,15 @@ export default function Home() {
               src="media/sound-ext_hd.mp4"
               poster="images/sound-ext.jpg"
               playing={interiorPlaying}
-              muted={videoMuted}
+              muted={interiorMuted}
               fullSize
             />
             <Button
               onClick={() => {
-                setVideoMuted(!videoMuted);
+                setInteriorMuted(!interiorMuted);
               }}
             >
-              {videoMuted ? "Unmute" : "Mute"}
+              {interiorMuted ? "Unmute" : "Mute"}
             </Button>
             <SkipButton />
           </Slide>
@@ -81,15 +83,29 @@ export default function Home() {
             </>
           )}
           <SlideDivider prevLabel="Exterior" nextLabel="Interior" />
-          <Slide>
+          <Slide
+            onSnap={() => {
+              setExteriorPlaying(true);
+            }}
+            onLeft={() => {
+              setExteriorPlaying(false);
+            }}
+          >
             <Headline>Interior</Headline>
             <Video
               src="media/sound-int_hd.mp4"
               poster="images/sound-int.jpg"
-              playing={false}
-              muted={true}
+              playing={exteriorPlaying}
+              muted={exteriorMuted}
               fullSize
             />
+            <Button
+              onClick={() => {
+                setExteriorMuted(!exteriorMuted);
+              }}
+            >
+              {exteriorMuted ? "Unmute" : "Mute"}
+            </Button>
             <SkipButton />
           </Slide>
         </Slider>
